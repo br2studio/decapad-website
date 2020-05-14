@@ -1,0 +1,41 @@
+// Paragraph typography variables
+$scheme-includes-paragraph-typography: true;
+
+/* Paragraph typography */
+p {
+	margin: 0 0 $element-margin 0;
+}
+
+/* Paragraph typography extensions */
+p.paragraph-headline {
+	color: $fg-bold-color;
+	font-size: $large-font-size;
+}
+
+p.paragraph-pullquote {
+	padding: $block-margin 0;
+	border-width: 2px 0;
+	border-style: solid;
+	border-color: $fg-bold-color;
+	color: $fg-bold-color;
+	font-size: $large-font-size;
+	font-weight: $bold-font-weight;
+	text-align: center;
+}
+
+// Scheme specific paragraph typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-paragraph-typography) {
+		&.scheme--#{$scheme} {
+
+			p.paragraph-headline {
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+
+			p.paragraph-pullquote {
+				border-color: map-val($schemes, $scheme, fg-bold-color);
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+// Skiplink singleton variables
+$skiplink-z-index: 1001;
+$skiplink-transition: $transition;
+
+/* Skiplink singleton prototype */
+.skiplink {
+	z-index: $skiplink-z-index;
+	position: absolute;
+	top: -5rem;
+	left: 0.5rem;
+	transition: top $skiplink-transition;
+
+	&:focus {
+		top: 1rem;
+	}
+
+	@include breakpoint('medium') {
+		&:focus {
+			top: 0.5rem;
+		}
+	}
+}

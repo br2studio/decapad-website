@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+
+	<!-- Required elements -->
+	<title>Decapad - Foglalások egyszerűen</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A Decapad egy foglaláskezelő keretrendszer és webalapú alkalmazás, mely képes a legkülönfélébb foglalási folyamatok kialakítására, a beérkezett foglalások hatékony kezelésére.">
+	<meta name="author" content="BR2 Stúdió Kft.">
+	<link rel="stylesheet" href="assets/css/app.css">
+
+	<!-- OpenGraph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Decapad - Foglalások egyszerűen" />
+	<meta property="og:description" content="A Decapad egy foglaláskezelő keretrendszer és webalapú alkalmazás, mely képes a legkülönfélébb foglalási folyamatok kialakítására, a beérkezett foglalások hatékony kezelésére." />
+	<meta property="og:url" content="https://www.decapad.com" />
+	<meta property="og:locale" content="hu_HU" />
+	<meta property="og:site_name" content="Decapad" />
+	<meta property="og:image" content="https://www.decapad.com/assets/images/social/open-graph.jpg" />
+
+	<!-- Twitter Card  -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Decapad - Foglalások egyszerűen" />
+	<meta name="twitter:description" content="A Decapad egy foglaláskezelő keretrendszer és webalapú alkalmazás, mely képes a legkülönfélébb foglalási folyamatok kialakítására, a beérkezett foglalások hatékony kezelésére." />
+	<meta name="twitter:image" content="https://www.decapad.com/assets/images/social/twitter-card.jpg" />
+
+	<!-- MS application -->
+	<meta name="application-name" content="Decapad">
+	<meta name="msapplication-tap-highlight" content="no" />
+
+	<!-- Apple touch icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon/180.png">
+
+	<!-- Manifest file -->
+	<link rel="manifest" href="manifest.json">
+
+	<!-- Favicons (16x16, 32x32 favicon.ico in the root is also required) -->
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/16.png">
+
+	<!-- Theme color -->
+	<meta name="theme-color" content="#ef5063">
+
+</head>
+<body class="no-js no-touch">
+<div class="app">
+
+	<!-- Skip to main content accessibility button -->
+	<a class="skiplink button button--small button--primary" href="#main">Ugrás a tartalomra</a>
+
+	<!-- Message when JavaScript is disabled -->
+	<noscript>
+		<div class="noscript">Engedélyezd a JavaScript használatát a böngésződben!</div>
+	</noscript>
+
+	<!-- Message when internet connection is not available -->
+	<div class="offline">Jelenleg offline vagy, csatlakozz egy hálózathoz!</div>
+
+	<!-- Navbar singleton -->
+	<header class="navbar" data-offset-nav>
+		<div class="container">
+			<a href="#" class="navbar-logo">
+				<img src="assets/images/logo.svg" alt="Decapad nyitóoldal" />
+			</a>
+			<div class="navbar-space"><button type="button" class="navbar-menu button-link" data-offset-nav-trigger><svg class="icon icon--baseline icon--left" aria-hidden="true"><use xlink:href="#icon-menu"></use></svg>Navigáció</button></div>
+			<nav class="navbar-nav" data-offset-nav-element>
+				<ul class="navbar-nav-links">
+					<li><a href="#industries" data-nav-item data-smooth-scroll>Iparágak</a></li>
+					<li><a href="#features" data-nav-item data-smooth-scroll>Funkciók</a></li>
+					<li><a href="#screenshots" data-nav-item data-smooth-scroll>Képernyőképek</a></li>
+					<li><a href="#how-it-works" data-nav-item data-smooth-scroll>Működési elv</a></li>
+					<li><a href="#ordering" data-nav-item data-smooth-scroll>Megrendelés</a></li>
+					<li><a href="#pricing" data-nav-item data-smooth-scroll>Árak</a></li>
+				</ul>
+				<button type="button" class="navbar-nav-close button-link" aria-label="Navigáció bezárása" data-offset-nav-close><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-close"></use></svg></button>
+			</nav>
+		</div>
+	</header>
+
+	<!-- Hero singleton -->
+	<div class="hero">
+		<div class="container">
+			<div class="grid grid--gutter grid--gutter--double grid--middle">
+				<div class="grid-col grid-col--1of2 grid-col--medium--full">
+					<h1>Egyedi foglalási folyamatok bevezetése, foglalások kezelése egyszerűen</h1>
+					<p>A Decapad egy foglaláskezelő keretrendszer és webalapú alkalmazás, mely képes a legkülönfélébb foglalási folyamatok kialakítására, a beérkezett foglalások hatékony kezelésére.</p>
+					<ul class="grid grid--gutter grid--gutter--half grid--uniform">
+						<li class="grid-col grid-col--medium--full"><a href="#ordering" class="button button--primary" role="button" data-smooth-scroll>Megrendelés</a></li>
+					</ul>
+				</div>
+				<div class="grid-col grid-col--1of2 grid-col--medium--full">
+					<div class="hero-screen">
+						<span class="hero-screen-background image image--fit">
+							<picture>
+								<source srcset="images/mobile.svg" media="(max-width: 47em)">
+								<img src="images/desktop.svg" alt="" />
+							</picture>
+						</span>
+						<span class="hero-screen-foreground image image--fit">
+							<picture>
+								<source srcset="images/hero/mobile.png" media="(max-width: 47em)">
+								<img src="images/hero/desktop.png" alt="Irányítópult az adminisztrációs felületen" />
+							</picture>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Introduction singleton -->
+		<div id="introduction" class="introduction section">
+			<div class="container">
+				<h2 class="is-visually-hidden">Bevezető</h2>
+				<div class="grid grid--gutter">
+					<div class="grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full">
+						<div class="introduction-item" data-hover-animation>
+							<span class="keypoint keypoint--primary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-link"></use></svg></span>
+							<h3 class="h5">Foglalási folyamat integrálása</h3>
+							<p>Új foglalásokat kényelmesen leadhatsz manuálisan az adminisztrációs felületen keresztül is, de a rendszer könnyen integrálható más rendszerekkel egy API segítségével, így a foglalás leadásának folyamata teljes mértékben testreszabható és automatizálható.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full">
+						<div class="introduction-item" data-hover-animation>
+							<span class="keypoint keypoint--primary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-timer"></use></svg></span>
+							<h3 class="h5">Fixált és flexibilis időbeosztások</h3>
+							<p>A rendszerben kialakíthatóak foglalási folyamatokat fixált és flexibilis időbeosztással is. Előbbi esetben az ügyfél csak előre meghatározott időpontok közül választhat, utóbbi esetben egy megadott dátum- és időintervallumon belül az ügyfél maga határozhatja meg a foglalás idejét.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full">
+						<div class="introduction-item" data-hover-animation>
+							<span class="keypoint keypoint--primary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-cash"></use></svg></span>
+							<h3 class="h5">Fizetési átjárók integrálása</h3>
+							<p>A fizetési módok, a fizetéssel kapcsolatos mezők meghatározásán túl, lehetőséget biztosítanak olyan fizetési átjárók integrálására, mint a PayPal, Stripe vagy különböző bankok online fizetési rendszerei, így az ügyfeleid azonnal kifizethetik a foglalásaikat.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full">
+						<div class="introduction-item" data-hover-animation>
+							<span class="keypoint keypoint--primary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-no-interval"></use></svg></span>
+							<h3 class="h5">Kizárt intervallumok</h3>
+							<p>Flexibilis időbeosztás esetén a lefoglalható dátum- és időintervallumok mellett korlátlanul határozhatsz meg kizárt intervallumokat is, amik segítségével például elkerülheted, hogy munkaszüneti napokon vagy egy átmeneti zárvatartás ideje alatt foglalást lehessen leadni.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full">
+						<div class="introduction-item" data-hover-animation>
+							<span class="keypoint keypoint--primary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-list-box"></use></svg></span>
+							<h3 class="h5">Eltérő foglalási típusok</h3>
+							<p>A rendszerben több, egymástól eltérő foglalási típus hozható létre, amikhez más-más foglalási folyamatok alakíthatóak ki. Az eltérő típusú foglalásokat pedig akár egy naptárban is kezelheted, így azok osztoznak a naptár elérhető helyein és azok kapacitásán.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full">
+						<div class="introduction-item" data-hover-animation>
+							<span class="keypoint keypoint--primary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-no-seat"></use></svg></span>
+							<h3 class="h5">Helyek lekötése</h3>
+							<p>Amennyiben egy helyszínen belül fixált és flexibilis időbeosztású foglalalásokat is kezelsz, a fixált időbeosztások ideje alatt lehetőséged van a helyszín bizonyos helyeit lekötni, így azok a flexibilis időbeosztás keretében abban az időben nem foglalhatóak le.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Industries singleton -->
+		<div id="industries" class="industries section section--large">
+			<div class="container">
+				<header class="header header--section">
+					<h2>Iparágak</h2>
+					<p>A rendszerrel a legkülönfélébb területek foglalásai kezelhetőek</p>
+				</header>
+				<div id="industries-slider" class="slider" aria-describedby="industries-slider-description" tabindex="0" data-slider>
+					<p id="industries-slider-description" class="is-visually-hidden">Iparágak felsorolása</p>
+					<div class="slider-viewport" data-slider-viewport>
+						<ul class="slider-list grid grid--gutter grid--gutter--half grid--uniform" data-slider-list>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/accommodation-pre.png" alt="Férfi táskákkal a kezében a recepció felé sétál" data-hover-animation-target data-lazy-image-src="images/industries/accommodation.svg" /></span>
+									<h3 class="h6">Szálláshelyek</h3>
+									<p>A Decapad ideális választás lehet egy hotel, motel, apartman vagy más szálláshely szobafoglalásainak kezelésére. A rendszerben meghatározhatod az elérhető szobákat és azok férőhelyét, a lefoglalható intervallumokat.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-accommodation" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-accommodation" hidden>
+									<h3>Szálláshelyek</h3>
+									<p>A Decapad ideális választás lehet egy hotel, motel, apartman vagy más szálláshely szobafoglalásainak kezelésére. A rendszerben meghatározhatod az elérhető szobákat és azok férőhelyét, a lefoglalható intervallumokat. Ezt követően különböző csomagokat alakíthatsz ki, amik a szobafoglalással járó szolgáltatásokat határozzák a vendégek részére. Igény esetén a látogató bővítheti a csomagot kiegészítő szolgáltatásokkal is, mint például wellness belépő vagy konfereciaterem bérlés. A kialakított foglalási folyamatok egyszerűen integrálhatóak a szálláshely weboldalával, így a látogatók maguk is egyszerűen foglalhatnak szobát.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/restaurant-pre.png" alt="Nő leadja a rendelését a pincér számára egy étterem erkélyén" data-hover-animation-target data-lazy-image-src="images/industries/restaurant.svg" /></span>
+									<h3 class="h6">Éttermek</h3>
+									<p>A Decapad ideális választás lehet egy étterem asztalfoglalásainak kezelésére. A rendszerben több helyszín asztalait és azok férőhelyét is meghatározhatod, az egyes helyszínekhez eltérő nyitvatartást is megadhatsz.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-restaurant" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-restaurant" hidden>
+									<h3>Éttermek</h3>
+									<p>A Decapad ideális választás lehet egy étterem asztalfoglalásainak kezelésére. A rendszerben több helyszín, mint például erkély, asztalait és azok férőhelyét is meghatározhatod, az egyes helyszínekhez eltérő nyitvatartást is megadhatsz. Az éttermen belül különböző események jelentkezései is kivitelezhetőek, ezek ideje alatt pedig akár kizárólagossá teheted bizonyos asztalok lefoglalhatóságát is. A kialakított foglalási folyamatok egyszerűen integrálhatóak az étterem weboldalával, így a látogatók maguk is egyszerűen foglalhatnak asztalt.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/theatre-pre.png" alt="Közönség nézi a színházelőadást" data-hover-animation-target data-lazy-image-src="images/industries/theatre.svg" /></span>
+									<h3 class="h6">Mozik, színházak</h3>
+									<p>A Decapad ideális választás lehet egy mozi vagy színház részére az előadások jegyvásárlásainak kezelésére. A rendszerben több termet is meghatározhatsz, korlátlanul hozhatsz létre új filmeket vagy darabokat, szerkesztheted azok műsorrendjét.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-theatre" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-theatre" hidden>
+									<h3>Mozik, színházak</h3>
+									<p>A Decapad ideális választás lehet egy mozi vagy színház részére az előadások jegyvásárlásainak kezelésére. A rendszerben több termet is meghatározhatsz, akár eltérő űlőhelyekkel, korlátlanul hozhatsz létre új filmeket vagy darabokat, szerkesztheted azok műsorrendjét. A kialakított foglalási folyamatok egyszerűen integrálhatóak a mozi vagy színház weboldalával, így a látogatók maguk is egyszerűen vásárolhatnak jegyet.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/museum-pre.png" alt="Látogatók hallgatják a tárlatvezetőt, aki elemzi a festményt" data-hover-animation-target data-lazy-image-src="images/industries/museum.svg" /></span>
+									<h3 class="h6">Múzeumok, galériák</h3>
+									<p>A Decapad ideális választás lehet egy múzeum vagy galéria részére a kiállítások időpontfoglalásainak kezelésére. A redszerben létrehozhatsz különböző kiállításokat, amikre akár eltérő termekben, más nyitvatartással foglalhatnak az érdeklődök időpontot.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-museum" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-museum" hidden>
+									<h3>Múzeumok, galériák</h3>
+									<p>A Decapad ideális választás lehet egy múzeum vagy galéria részére a kiállítások időpontfoglalásainak kezelésére. A redszerben létrehozhatsz különböző állandó vagy időszaki kiállításokat, amikre akár eltérő termekben, más nyitvatartással foglalhatnak az érdeklődök időpontot. A múzeumban vagy galériában, akár egy termen belül is, különböző események jelentkezései is kivitelezhetőek, melyek ideje alatt akár kizárhatod a terem állandó kiálításainak látogatását is. A kialakított foglalási folyamatok egyszerűen integrálhatóak a múzeum vagy galéria weboldalával, így a látogatók maguk is egyszerűen foglalhatnak időpontot.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/conference-pre.png" alt="Közönség hallgatja az előadó beszédét" data-hover-animation-target data-lazy-image-src="images/industries/conference.svg" /></span>
+									<h3 class="h6">Fesztiválok, konferenciák</h3>
+									<p>A Decapad ideális választás lehet egy fesztivál vagy konferencia jegyvásárlásainak kezeléséhez. A rendszerben létrehozhatsz napijegyeket és bérleteket, a fesztivál vagy konferencia pedig akár több helyszínre is osztható.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-conference" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-conference" hidden>
+									<h3>Fesztiválok, konferenciák</h3>
+									<p>A Decapad ideális választás lehet egy fesztivál vagy konferencia jegy- és bérletvásárlásainak kezeléséhez. A rendszerben létrehozhatsz napijegyeket és több napon át érvényes bérleteket, igény esetén a fesztivál vagy konferencia több helyszínre is osztható, eltérő jegy- és bérletárakkal. A kialakított foglalási folyamatok egyszerűen integrálhatóak a fesztivál vagy konferencia weboldalával, így a látogatók maguk is egyszerűen vásárolhatnak jegyeket vagy bérleteket.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/concert-pre.png" alt="Férfi és nő táncol az énekes zenéjére" data-hover-animation-target data-lazy-image-src="images/industries/concert.svg" /></span>
+									<h3 class="h6">Előadások, koncertek</h3>
+									<p>A Decapad ideális választás lehet előadások, koncertek jegyvásárlásainak kezelésére. A rendszerben korlátlanul hozhatsz létre eseményeket, amiket igény esetén több helyszínre is oszthatsz, eltérő jegyárakkal.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-concert" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-concert" hidden>
+									<h3>Előadások, koncertek</h3>
+									<p>A Decapad ideális választás lehet előadások, koncertek jegyvásárlásainak kezelésére. A rendszerben korlátlanul hozhatsz létre eseményeket, meghatározhatod azok díját, időtartamát és kezdő időpontját. Egy eseményt több helyszínre is oszthatsz, eltérő jegyárakkal, de akár több helyszín eseményeit is kezelheted egy felületen. Az egyes helyszíneknek megadhatsz maximális kapacitást, de akár űlőhelyekre is bonthatod a lefoglalható jegyeket. A kialakított foglalási folyamatok egyszerűen integrálhatóak az esemény szervezőjének meglévő weboldalával, így a látogatók maguk is egyszerűen vásárolhatnak jegyeket.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/saloon-pre.png" alt="Fodrász igazítja egy férfi haját a tükör előtt egy fodrász szalonban" data-hover-animation-target data-lazy-image-src="images/industries/saloon.svg" /></span>
+									<h3 class="h6">Szalonok</h3>
+									<p>A Decapad ideális választás lehet egy szalon időpontfoglalásainak kezelésére. A rendszerben meghatározhatod a szalonban elérhető szolgáltatások árát és időtartamát, igény esetén pedig az ügyfél akár több szolgáltatást is lefoglalhat egy foglaláson belül.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-saloon" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-saloon" hidden>
+									<h3>Szalonok</h3>
+									<p>A Decapad ideális választás lehet egy szalon időpontfoglalásainak kezelésére. A rendszerben létrehozhatod a szalonban elérhető különböző szolgáltatásokat, mint például férfi hajvágás, meghatározhatod azok díját és időtartamát. Igény esetén az ügyfél akár több szolgáltatást is lefoglalhat egy foglaláson belül. Több munkatárs esetén a foglalás leadása kivitelezhető akár úgy is, hogy az ügyfél választhatja ki, kinél szeretne időpontot foglalni. A kialakított foglalási folyamatok egyszerűen integrálhatóak a szalon meglévő weboldalával, így az ügyfelek maguk is egyszerűen foglalhatnak időpontot.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/car-service-pre.png" alt="Autószerelő javítja a gépjárművet" data-hover-animation-target data-lazy-image-src="images/industries/car-service.svg" /></span>
+									<h3 class="h6">Autó vagy kerékpár szervizek</h3>
+									<p>A Decapad ideális választás lehet egy autó vagy kerékpár szerviz időpontfoglalásainak kezelésére. A rendszerben meghatározhatod a különböző szerviz tevékenységek árát és idejét, igény esetén az ügyfél akár több szolgáltatást is lefoglalhat egy foglaláson belül.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-car-service" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-car-service" hidden>
+									<h3>Autó vagy kerékpár szervizek</h3>
+									<p>A Decapad ideális választás lehet egy autó vagy kerékpár szerviz időpontfoglalásainak kezelésére. A rendszerben létrehozhatsz különböző szerviz tevékenységek, meghatározhatod azok díját és időtartamát. Igény esetén az ügyfél akár több tevékenységet is lefoglalhat egy foglaláson belül. A kialakított foglalási folyamatok egyszerűen integrálhatóak a szerviz meglévő weboldalával, így a látogatók maguk is egyszerűen foglalhatnak időpontot. Amennyiben az ügyfél számára szükséges szerviz tevékenységet nem tartalmazza a rendszer, az időpontot azonban szeretnéd a naptárban elhelyezni, létrehozhatsz különböző intervallumokat, a szerviz várható időtartamának megfelelőt kiválasztva pedig a foglalást manuálisan elhelyezheted.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/course-pre.png" alt="Tanulók jegyzetelik a tanár előadását a tanfolyamon" data-hover-animation-target data-lazy-image-src="images/industries/course.svg" /></span>
+									<h3 class="h6">Tanfolyamok</h3>
+									<p>A Decapad ideális választás lehet tanfolyamok jelentkezéseinek kezelésére. A rendszerben meghatározhatod a különböző tanfolyamokat, amiket egyszerre több helyszínen is indíthatsz, de akár egy helyszínen belül különböző tanfolyamokat is kezelhetsz.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-course" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-course" hidden>
+									<h3>Tanfolyamok</h3>
+									<p>A Decapad ideális választás lehet tanfolyamok jelentkezéseinek kezelésére. A rendszerben létrehozhatsz különböző tanfolyamokat, meghatározhatod azok díját, időtartamát és kezdő időpontját. Egy tanfolyamot több helyszínen is indíthatsz, de akár egy helyszínen belül több tanfolyam jelentkezéseit is kezelheted. A kialakított foglalási folyamatok egyszerűen integrálhatóak a tanfolyam meglévő weboldalával, így az érdeklődök maguk is egyszerűen jelentkezhetnek rá.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/fitness-pre.png" alt="Férfi és nő a fitness teremben edzenek" data-hover-animation-target data-lazy-image-src="images/industries/fitness.svg" /></span>
+									<h3 class="h6">Wellness vagy fitness termek</h3>
+									<p>A Decapad ideális választás lehet egy wellness vagy fitness terem belépőinek kezelésére. A rendszerben meghatározhatod a különböző jegyek és bérletek árát és időtartamát, amiket igény esetén a látogató kibővíthet további szolgáltatásokkal.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-fitness" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-fitness" hidden>
+									<h3>Wellness vagy fitness termek</h3>
+									<p>A Decapad ideális választás lehet egy wellness vagy fitness terem belépőinek kezelésére. A rendszerben létrehozhatsz különböző jegyeket és bérleteket, meghatározhatod azok díját és időtartamát. Igény esetén a látogató a belépőt kibővítheti további szolgáltatásokkal is, mint például masszázs. A kialakított foglalási folyamatok egyszerűen integrálhatóak a wellness vagy fitness terem meglévő weboldalával, így a látogatók maguk is egyszerűen vásárolhatnak jegyeket vagy bérleteket.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/bike-rent-pre.png" alt="Férfi kerékpározás közben integet egy padon ülő nőnek" data-hover-animation-target data-lazy-image-src="images/industries/bike-rent.svg" /></span>
+									<h3 class="h6">Autó- vagy kerékpár kölcsönzők</h3>
+									<p>A Decapad ideális választás lehet egy autó- vagy kerékpár kölcsönző foglalásainak kezelésére. A rendszerben meghatározhatod a kikölcsönözhető intervallumokat, a különböző autókat vagy kerékpárokat pedig eltérő áron is bérbeadhatod.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-bike-rent" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-bike-rent" hidden>
+									<h3>Autó- vagy kerékpár kölcsönzők</h3>
+									<p>A Decapad ideális választás lehet egy autó- vagy kerékpár kölcsönző foglalásainak kezelésére. A rendszerben létrehozhatsz különböző intervallumokat, amin belül a látogató maga választhatja ki a kölcsönzés idejét. Igény esetén a különböző autókat vagy kerékpárokat eltérő áron is bérbeadhatod, továbbá több kölcsönző foglalásait is kezelheted egy felületen. A kialakított foglalási folyamatok egyszerűen integrálhatóak az autó- vagy kerékpár kölcsönző meglévő weboldalával, így a látogatók maguk is egyszerűen foglalhatnak időpontot.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/hospital-pre.png" alt="Páciens orvosi vizsgálaton vesz részt egy rendelőben" data-hover-animation-target data-lazy-image-src="images/industries/hospital.svg" /></span>
+									<h3 class="h6">Orvosi vagy fogászati rendelők</h3>
+									<p>A Decapad ideális választás lehet egy orvosi vagy fogászati rendelő időpontfoglalásainak kezelésére. A rendszerben meghatározhatod a különböző vizsgálatok árát és időtartamát, igény esetén az ügyfél akár több vizsgálatot is lefoglalhat egy foglaláson belül.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-hospital" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-hospital" hidden>
+									<h3>Orvosi vagy fogászati rendelők</h3>
+									<p>A Decapad ideális választás lehet egy orvosi vagy fogászati rendelő időpontfoglalásainak kezelésére. A rendszerben létrehozhatsz különböző vizsgálatokat, meghatározhatod azok díját és időtartamát. Igény esetén az ügyfél akár több vizsgálatot is lefoglalhat egy foglaláson belül. A kialakított foglalási folyamatok egyszerűen integrálhatóak a rendelő meglévő weboldalával, így a páciensek maguk is egyszerűen foglalhatnak időpontot. Amennyiben az ügyfél számára szükséges vizsgálatot nem tartalmazza a rendszer, az időpontot azonban szeretnénk a naptárban elhelyezni, létrehozhatunk különböző intervallumokat, a vizsgálat várható időtartamának megfelelőt kiválasztva a foglalást manuálisan elhelyezhetjük.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/travel-agency-pre.png" alt="Két férfi az Eiffel-torony előtt fotóza magát" data-hover-animation-target data-lazy-image-src="images/industries/travel-agency.svg" /></span>
+									<h3 class="h6">Utazási irodák, idegenvezetők</h3>
+									<p>A Decapad ideális választás lehet egy utazási iroda vagy idegenvezető részére az utak foglalásainak kezelésére. A rendszerben meghatározhatod a különböző utak díját, férőhelyeit és időpontját, amiket a látogató akár kiegészítő szolgáltatásokkal is kibővíthet.</p>
+									<div class="industries-slider-item-button">
+										<a href="#modal-industry-travel-agency" class="button button--primary" data-modal-type="dialog" data-modal-custom-classes="modal--narrow, industries-modal">Részletek</a>
+									</div>
+								</div>
+								<div id="modal-industry-travel-agency" hidden>
+									<h3>Utazási irodák, idegenvezetők</h3>
+									<p>A Decapad ideális választás lehet egy utazási iroda vagy idegenvezető részére az utak foglalásainak kezelésére. A rendszerben létrehozhatsz különböző utakat, meghatározhatod azok egy főre eső díját, időtartamát és a maximális férőhelyek számát. Igény esetén a látogató bővítheti az utat kiegészítő szolgáltatásokkal is, mint például egy fakultatív program belépője. A kialakított foglalási folyamatok egyszerűen integrálhatóak az utazási iroda vagy idegenvezető meglévő weboldalával, így a látogatók maguk is egyszerűen foglalhatnak utakat.</p>
+								</div>
+							</li>
+							<li class="slider-list-item grid-col grid-col--1of3 grid-col--medium--1of2 grid-col--small--full" data-slider-list-item>
+								<div class="industries-slider-item" data-hover-animation>
+									<span class="image image--fit" data-lazy-image><img src="images/industries/more-pre.png" alt="" data-hover-animation-target data-lazy-image-src="images/industries/more.svg" /></span>
+									<h3 class="h6">További területek</h3>
+									<p>A magas fokú testreszabhatóságnak köszönhetően a rendszerben a legkülönfélébb foglalási folyamatok alakíthatóak ki, így az számos további terület foglalásainak kezelésére is alkalmas. Konkrét elképzelésekkel kapcsolatban, kérjük, vedd fel velünk a kapcsolatot!</p>
+									<div class="industries-slider-item-button">
+										<a href="#ordering" class="button button--primary" data-smooth-scroll>Megrendelés</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul class="slider-control-list grid">
+						<li class="grid-col"><button type="button" class="slider-control-list-item slider-control-list-prev button button--iconbutton button--iconbutton--circle button--secondary" aria-controls="industries-slider" aria-label="Előző iparág" data-slider-prev><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-back"></use></svg></button></li>
+						<li class="grid-col"><button type="button" class="slider-control-list-item slider-control-list-next button button--iconbutton button--iconbutton--circle button--secondary" aria-controls="industries-slider" aria-label="Következő iparág" data-slider-next><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-forward"></use></svg></button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Features singleton -->
+		<div id="features" class="features section">
+			<div class="container">
+				<header class="header header--section">
+					<h2>Funkciók</h2>
+					<p>Néhány kiemelt funkció a teljesség igénye nélkül</p>
+				</header>
+				<div class="grid grid--gutter">
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32"><use xlink:href="#icon-repeat"></use></svg></span>
+							<h3 class="h5">Variálható adatstruktúrák</h3>
+							<p>Különböző foglalási folyamatok során más-más foglalási adatok kitöltése szükséges, egy folyamatot pedig olykor különböző típusú ügyfelek számára is szeretnénk elérhetővé tenni, több fizetési módot is biztosítva számukra. Ezek mind, mind eltérő adatokat jelentenek. Ennek a kivitelezéséhez a foglalási adatokat 3 különböző struktúrába csoportosíthatjuk: foglalási, ügyfél és fizetési adatokra. Egy új foglalás leadása során az ügyfél maga választhat az egyes struktúrák elemei közül.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32"><use xlink:href="#icon-map"></use></svg></span>
+							<h3 class="h5">Több helyszín kezelése</h3>
+							<p>A kialakított foglalási folyamatokat olykor több helyszínen is szeretnénk elérhetővé tenni, az egyes helyszínek azonban eltérő helyekkel és kapacitással rendelkeznek. A rendszerben korlátlanul hozhatsz létre naptárakat, amiken belül pedig szabadon határozhatod meg az elérhető helyeket és azok kapacitását. Egy naptáron belül pedig akár eltérő típusú foglalások is elhelyezhetsz, melyek osztoznak az naptár helyein és azok kapacitásán.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-flag"></use></svg></span>
+							<h3 class="h5">Leadott foglalások kezelése</h3>
+							<p>A leadott foglalásokat a foglalási státuszok és állapotok segítségével kezelheted. A státusz módosításával határozhatod meg, hogy az adott foglalás jóváhagyásra, fizetésre, teljesítésre vagy elutasításra került, az állapotokkal pedig további eseményeket határozhatsz meg a foglalási folyamatban. Egy állapot teljesítése során pedig akár további adatokat is rendelhetsz a foglaláshoz.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-key"></use></svg></span>
+							<h3 class="h5">Részletes jogosultságkezelés</h3>
+							<p>Jelentős mennyiségű foglalás vagy több helyszín esetén szükséged lehet további felhasználókra a foglalások kezeléséhez, a foglalási folyamatok adminisztráláshoz. A rendszerben korlátlanul hozhatsz létre felhasználókat, egy részletes jogosultságkezelővel pedig meghatározhatod, hogy a rendszer mely területeihez férhetnek hozzá, mely naptárak foglalásait kezelhetik.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-phone-portrait"></use></svg></span>
+							<h3 class="h5">Bárhonnan, mindenki számára</h3>
+							<p>A foglalásokat és a rendszer többi részét egy minden eszközről kényelmesen és egyszerűen használható, reszponzív adminisztrációs felületen keresztül érheted el. A felület a WCAG 2.0 akadálymentesítési útmutatóban meghatározott ajánlások figyelembevételével készült, így azt akár a fogyatékkal élők is használhatják.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-thumbs-up"></use></svg></span>
+							<h3 class="h5">Dátum ajánlások</h3>
+							<p>Flexibilis időbeosztás esetén egy dátum ajánló rendszer segítségével gyorsan választhatsz olyan időpontok közül, melyek rendelkeznek legalább egy szabad kapacitással. A rendszer az ajánlásokat a legjobb időkihasználás figyelembevételével számolja ki, a segítségével csökkentheted a foglalások közötti kitöltetlen réseket is.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-mail"></use></svg></span>
+							<h3 class="h5">Automatikus üzenetek</h3>
+							<p>A foglalási folyamat minden minden státusz- és állapotváltozásakor, egy megadott idővel a foglalás kezdetét vagy végét megelőzően lehetőséged van üzeneteket automatikusan kiküldeni az ügyfél, a megadott felhasználók vagy e-mail címek részére. Az üzenetek segítségével tájékoztathatod az ügyfelet a foglalása aktuális állapotáról, vagy a foglalásokat kezelő felhasználókat egy új foglalás beérkezéséről.</p>
+						</div>
+					</div>
+					<div class="grid-col grid-col--1of2 grid-col--small--full">
+						<div class="features-item" data-hover-animation>
+							<span class="keypoint keypoint--secondary keypoint--small keypoint--rotated" data-hover-animation-target><svg class="icon icon--32" aria-hidden="true"><use xlink:href="#icon-no-hands"></use></svg></span>
+							<h3 class="h5">Automatizált foglaláskezelés</h3>
+							<p>A foglalási folyamat kezelése több ponton is automatizálható, így csökkentheted a kezeléssel járó teendőket. Többek között beállíthatod, hogy egy megadott idővel a foglalás kezdetét megelezően vagy a foglalás leadását követően a nem jóváhagyott foglalások automatikusan elutasításra kerüljenek, az új foglalások automatikusan jóváhagyásra kerüljenek, vagy a foglalás befejező dátuma után automatikusan teljesítettek legyenek.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Screenshots singleton -->
+		<div id="screenshots" class="screenshots section section--large">
+			<div class="container">
+				<header class="header header--section">
+					<h2>Képernyőképek</h2>
+					<p>Az adminisztrációs felület minden eszközről egyszerűen kezelhető</p>
+				</header>
+				<div id="screenshots-slider" class="slider" aria-describedby="screenshots-slider-description" tabindex="0" data-slider>
+					<p id="screenshots-slider-description" class="is-visually-hidden">Képernyőképek felsorolása</p>
+					<div class="screenshots-slider-background image image--fit">
+						<picture>
+							<source srcset="images/mobile.svg" media="(max-width: 47em)">
+							<img src="images/desktop.svg" alt="" />
+						</picture>
+					</div>
+					<div class="slider-viewport" data-slider-viewport>
+						<ul class="slider-list grid grid--gutter grid--uniform" data-slider-list>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/1-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/1-mobile.png">
+										<img src="images/screenshots/1-desktop-pre.png" alt="Irányítópult az adminisztrációs felületen" data-lazy-image-src="images/screenshots/1-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/2-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/2-mobile.png">
+										<img src="images/screenshots/2-desktop-pre.png" alt="Foglalások listázása az adminisztrációs felületen" data-lazy-image-src="images/screenshots/2-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/3-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/3-mobile.png">
+										<img src="images/screenshots/3-desktop-pre.png" alt="Foglalások listázásának szűrése az adminisztrációs felületen" data-lazy-image-src="images/screenshots/3-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/4-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/4-mobile.png">
+										<img src="images/screenshots/4-desktop-pre.png" alt="Új foglalás leadásának első lépése az adminisztrációs felületen" data-lazy-image-src="images/screenshots/4-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/5-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/5-mobile.png">
+										<img src="images/screenshots/5-desktop-pre.png" alt="Foglalás adatainak áttekintése az adminisztrációs felületen" data-lazy-image-src="images/screenshots/5-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/6-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/6-mobile.png">
+										<img src="images/screenshots/6-desktop-pre.png" alt="Státuszok kezelése az adminisztrációs felületen" data-lazy-image-src="images/screenshots/6-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/7-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/7-mobile.png">
+										<img src="images/screenshots/7-desktop-pre.png" alt="Naptár kapacitásainak naptárszerű áttekintése az adminisztrációs felületen" data-lazy-image-src="images/screenshots/7-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/8-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/8-mobile.png">
+										<img src="images/screenshots/8-desktop-pre.png" alt="Naptár fizetési módjainak és helyazonosítóinak beállítása az adminisztrációs felületen" data-lazy-image-src="images/screenshots/8-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/9-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/9-mobile.png">
+										<img src="images/screenshots/9-desktop-pre.png" alt="Időbeosztás intervallumainak beállítása az adminisztrációs felületen" data-lazy-image-src="images/screenshots/9-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/10-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/10-mobile.png">
+										<img src="images/screenshots/10-desktop-pre.png" alt="Időbeosztás kizárt időintervallumainak és naptárainak beállítása az adminisztrációs felületen" data-lazy-image-src="images/screenshots/10-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/11-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/11-mobile.png">
+										<img src="images/screenshots/11-desktop-pre.png" alt="Üzenet beállítása az adminisztrációs felületen" data-lazy-image-src="images/screenshots/11-desktop.png" />
+									</picture>
+								</span>
+							</li>
+							<li class="slider-list-item grid-col grid-col--full" data-slider-list-item>
+								<span class="image image--fit lazy-image" data-lazy-image>
+									<picture>
+										<source srcset="images/screenshots/12-mobile-pre.png" media="(max-width: 47em)" data-lazy-image-src="images/screenshots/12-mobile.png">
+										<img src="images/screenshots/12-desktop-pre.png" alt="Felhasználó engedélyinek beállítása az adminisztrációs felületen" data-lazy-image-src="images/screenshots/12-desktop.png" />
+									</picture>
+								</span>
+							</li>
+						</ul>
+					</div>
+					<ul class="slider-control-list grid">
+						<li class="grid-col"><button type="button" class="slider-control-list-item slider-control-list-prev button button--iconbutton button--iconbutton--circle" aria-controls="screenshots-slider" aria-label="Előző képernyőkép" data-slider-prev><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-back"></use></svg></button></li>
+						<li class="grid-col"><button type="button" class="slider-control-list-item slider-control-list-next button button--iconbutton button--iconbutton--circle" aria-controls="screenshots-slider" aria-label="Következő képernyőkép" data-slider-next><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-forward"></use></svg></button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- How it works singleton -->
+		<div id="how-it-works" class="how-it-works section">
+			<div class="container">
+				<header class="header header--section">
+					<h2>Működési elv</h2>
+					<p>A rendszer sokoldalúsága a foglalási folyamatokat meghatározó komponenseknek és a foglalást alkotó struktúráknak köszönhető</p>
+				</header>
+				<div class="how-it-works-list">
+					<div class="how-it-works-list-item">
+						<div class="grid grid--gutter grid--gutter--double grid--middle">
+							<div class="grid-col grid-col--1of3 small-is-hidden">
+								<span class="image image--fit" data-lazy-image><img src="images/how-it-works/1-pre.png" alt="Időbeosztás, foglalási egység, üzenet és naptár komponensek ikonjai" data-hover-animation-target data-lazy-image-src="images/how-it-works/1.svg" /></span>
+							</div>
+							<div class="grid-col grid-col--fit grid-col--small--full">
+								<h3>Komponensek</h3>
+								<p>Egy foglalás leadásához az alábbi 3 komponensből legalább egy-egy elem megléte szükséges: a foglalás tárgyát képező <strong>foglalási egységből</strong>, a foglalás helyszínét képező <strong>naptárból</strong>, valamint a foglalás idejét képező <strong>időbeosztásból</strong>. Az időbeosztással határozhatjuk meg, hogy egy foglalási egység egy naptáron belül milyen időpontokban foglalható le. A működéshez nem szükséges, ugyanakkor rendkívül hasznos komponens az <strong>üzenet</strong>, melyen keresztül a foglalási folyamat bármely lépéséről automatizált levelek küldhetőek ki az ügyfelek, szerkesztők, vagy más e-mail címek részére.</p>
+							</div>
+						</div>
+					</div>
+					<div class="how-it-works-list-item">
+						<div class="grid grid--gutter grid--gutter--double grid--middle">
+							<div class="grid-col grid-col--fit grid-col--small--full">
+								<h3>Struktúrák</h3>
+								<p>A struktúrák a foglalás vagy a foglalási egység kitöltendő mezőit határozzák meg. A foglalás során kiválasztott <strong>foglalási adathalmaz</strong> a foglaláshoz, az <strong>ügyfél adathalmaz</strong> az ügyfélhez, a <strong>fizetési mód</strong> pedig a fizetéshez kapcsolódó mezőket tartalmazza. Az egyes struktúrák variálhatóak is egymással, így egy kiválasztott foglalási adathalmazhoz lehetőség van akár több ügyfél adathalmaz és fizetési mód közül is választani. A <strong>foglalási típus</strong>, a többi struktúrával ellentétben, nem a foglaláshoz, hanem a foglalás tárgyát képező foglalási egységhez kitöltendő mezőket határozza meg.</p>
+							</div>
+							<div class="grid-col grid-col--1of3 grid-col--medium--important small-is-hidden">
+								<span class="image image--fit" data-lazy-image><img src="images/how-it-works/2-pre.png" alt="Foglalási és ügyfél adathalmaz, fizetési mód, foglalási típus struktúrák ikonjai" data-hover-animation-target data-lazy-image-src="images/how-it-works/2.svg" /></span>
+							</div>
+						</div>
+					</div>
+					<div class="how-it-works-list-item">
+						<div class="grid grid--gutter grid--gutter--double grid--middle">
+							<div class="grid-col grid-col--1of3 small-is-hidden">
+								<span class="image image--fit" data-lazy-image><img src="images/how-it-works/3-pre.png" alt="Elhelyezett, jóváhagyott, fizetett, teljesített és elutasított foglalások ikonjai" data-hover-animation-target data-lazy-image-src="images/how-it-works/3.svg" /></span>
+							</div>
+							<div class="grid-col grid-col--fit grid-col--small--full">
+								<h3>Foglalási folyamat</h3>
+								<p>A foglalási folyamatban egy foglalás aktuális helyzetét annak <strong>státusza</strong> határozza meg. Egy foglalás lehet átmeneti, elhelyezett, jóváhagyott, fizetett, teljesített vagy elutasított. A státuszokon túl lehetőség van további eseményeket is meghatározni a foglalási folyamatban a <strong>foglalási állapotok</strong> segítségével. Egy adott foglaláshoz az elérhető állapotokat a foglalási adathalmaz határozza meg. Egy állapot teljesítése során, a státuszokkal ellentétben, további adatokat is rendelhetünk a foglaláshoz.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Ordering singleton -->
+		<div id="ordering" class="ordering section section--large">
+			<div class="container">
+				<header class="header header--section">
+					<h2>Megrendelés</h2>
+					<p>A rendszer megrendelésének és bevezetésének folyamata</p>
+				</header>
+				<ul class="ordering-list">
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Kapcsolatfelvétel</h3>
+							<p>Vedd fel velünk a kapcsolatot a <a href="mailto:hello@decapad.com">hello@decapad.com</a> e-mail címen. A levélben ismertesd, hogy milyen szolgáltatásokat szeretnél lefoglalhatóvá tenni, a foglalási folyamatokkal kapcsolotban milyen elképzeléseid vannak, mennyi a havi foglalások várható mennyisége. Amennyiben szeretnéd a foglalás leadását egy meglévő rendszerbe is integrálni, de nem áll rendelkezésedre hozzá fejlesztő, kérjük, térj ki a rendszer technikai olalára is.</p>
+						</div>
+					</li>
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Személyes találkozó</h3>
+							<p>Egy személyes találkozó keretében részletesebben is ismertetheted az elképzeléseidet, mi pedig az elhangzottak és az előzetes információk alapján konkrét javaslatokat teszünk a kialakítandó foglalási folyamatokra. Ezeket a javaslatokat közösen átbeszéljük és formáljuk a végleges terv kialakulásáig.</p>
+						</div>
+					</li>
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Ajánlattétel</h3>
+							<p>A találkozó során egyeztetett tervek alapján kidolgozzuk az ajánlattételt, ami tartalmazza a foglalási folyamatok kialakításának, igény esetén más rendszerekbe való integrálásának egyszeri díját, a rendszer fenntartásának és a havi rendelkezésre állás havi díját.</p>
+						</div>
+					</li>
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Foglalási folyamatok kialakítása, integrálása</h3>
+							<p>A foglaláskezelő rendszer egy példányát feltelepítjük és konfiguráljuk a szerverünkön, az adminisztrációs felület megjelenését pedig a szolgáltatásod arculatához igazítjuk, így azt igazán a sajátodnak érezheted. Ezután a korábbiakban egyeztetett foglalási folyamatokat kialakítjuk, igény esetén integráljuk a meglévő rendszerekbe.</p>
+						</div>
+					</li>
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Oktatás</h3>
+							<p>Egy újabb személyes találkozó keretében bemutatjuk a foglaláskezelő rendszer és az integráció működését, megtanítjuk a kiválasztott munkatársak számára a foglalási folyamatok kezelésének módját.</p>
+						</div>
+					</li>
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Tesztelések, élesítés</h3>
+							<p>Közösen együttműködve teszteljük a rendszert, a foglalási folyamatokat és az integrációkat. A tesztelési időszakban felmerülő hibák javítását követően a rendszert már éles körülmények között is használatba veheted.</p>
+						</div>
+					</li>
+					<li class="ordering-list-item">
+						<div class="ordering-list-item-content">
+							<h3 class="h5">Támogatás, segítégnyújtás</h3>
+							<p>Az élesítést követően sem hagyunk magadra. A foglaláskezelő rendszert folyamatosan fejlesztjük, ezeket a frissítéseket számodra is folyamatosan biztosítjuk. A felmerülő kérdésekkel, további fejlesztési igényekkel pedig a támogatás keretein belül és azon túl is állunk rendelkezésedre.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Pricing singleton -->
+		<div id="pricing" class="pricing section">
+			<div class="container">
+				<header class="header header--section">
+					<h2>Árak</h2>
+					<p>A rendszer bevezetésének és támogatásának díjai</p>
+				</header>
+				<ul class="pricing-list grid grid--gutter grid--uniform">
+					<li class="pricing-list-item grid-col grid-col--1of3 grid-col--medium--full">
+						<div class="box">
+							<h3>Kis csomag</h3>
+							<p>16.000 Ft/hó<span> + foglalási folyamatok kialakításának és integrálásának egyszeri díja</span></p>
+							<ul class="list-special">
+								<li>200 foglalás havonta</li>
+								<li>1 óra támogatás havonta</li>
+								<li>Korlátlan felhasználók</li>
+								<li>Korlátlan foglalási egységek</li>
+								<li>Korlátlan naptárak</li>
+								<li>Korlátlan időbeosztások</li>
+								<li>Frissítések, hibajavítások</li>
+							</ul>
+						</div>
+					</li>
+					<li class="pricing-list-item grid-col grid-col--1of3 grid-col--medium--full">
+						<div class="box">
+							<h3>Közepes csomag</h3>
+							<p>22.000 Ft/hó<span> + foglalási folyamatok kialakításának és integrálásának egyszeri díja</span></p>
+							<ul class="list-special">
+								<li>500 foglalás havonta</li>
+								<li>1 óra támogatás havonta</li>
+								<li>Korlátlan felhasználók</li>
+								<li>Korlátlan foglalási egységek</li>
+								<li>Korlátlan naptárak</li>
+								<li>Korlátlan időbeosztások</li>
+								<li>Frissítések, hibajavítások</li>
+							</ul>
+						</div>
+					</li>
+					<li class="pricing-list-item grid-col grid-col--1of3 grid-col--medium--full">
+						<div class="box">
+							<h3>Nagy csomag</h3>
+							<p>39.000 Ft/hó<span> + foglalási folyamatok kialakításának és integrálásának egyszeri díja</span></p>
+							<ul class="list-special">
+								<li>1.000 foglalás havonta</li>
+								<li>2 óra támogatás havonta</li>
+								<li>Korlátlan felhasználók</li>
+								<li>Korlátlan foglalási egységek</li>
+								<li>Korlátlan naptárak</li>
+								<li>Korlátlan időbeosztások</li>
+								<li>Frissítések, hibajavítások</li>
+							</ul>
+						</div>
+					</li>
+					<li class="grid-col grid-col--full">
+						<div class="pricing-list-hint"><svg class="icon icon--baseline icon--left" aria-hidden="true"><use xlink:href="#icon-bulb"></use></svg>Nagyobb csomag esetén kérj egyedi ajánlatot a <a href="mailto:hello@decapad.com" class="link-special">hello@decapad.com</a> e-mail címen!</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Contact singleton -->
+		<div id="contact" class="contact section scheme--primary">
+			<div class="container">
+				<div class="contact-content">
+					<div class="contact-content-text">
+						<h2 class="h4">Felkeltettük az érdeklődésed?</h2>
+						<p>Amennyiben felkeltette az érdeklődésed a Decapad foglaláskezelő rendszer, vedd fel velünk a kapcsolatot a <a href="mailto:hello@decapad.com">hello@decapad.com</a> e-mail címen. A levélben ismertesd, hogy milyen szolgáltatásokat szeretnél lefoglalhatóvá tenni, a foglalási folyamatokkal kapcsolotban milyen elképzeléseid vannak, mennyi a havi foglalások várható mennyisége.</p>
+					</div>
+					<div class="contact-content-image image image--fit" data-lazy-image>
+						 
+						<img src="images/contact/office-pre.png" alt="" data-lazy-image-src="images/contact/office.svg" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-siteinfo grid grid--gutter grid--gutter--double">
+				<div class="grid-col grid-col--1of2 grid-col--small--full">
+					<h2>Mi a Decapad?</h2>
+					<p>A Decapad egy foglaláskezelő keretrendszer és webalapú alkalmazás, mely képes a legkülönfélébb foglalási folyamatok kialakítására, a beérkezett foglalások hatékony kezelésére. A foglalási folyamatok magas fokú testreszabhatóságának köszönhetően a rendszer számos terület foglalásainak kezelésére alkalmas, továbbá könnyen integrálható más weboldalakkal és alkalmazásokkal egy API segítségével, így a foglalás leadása teljes mértékben testreszabható és automatizálható.</p>
+				</div>
+				<div class="grid-col grid-col--1of4 grid-col--small--1of2 grid-col--xsmall--full">
+					<h2>Navigáció</h2>
+					<ul class="list-special">
+						<li><a href="#industries" class="link-special" data-smooth-scroll>Iparágak</a></li>
+						<li><a href="#features" class="link-special" data-smooth-scroll>Funkciók</a></li>
+						<li><a href="#screenshots" class="link-special" data-smooth-scroll>Képernyőképek</a></li>
+						<li><a href="#how-it-works" class="link-special" data-smooth-scroll>Működési elv</a></li>
+						<li><a href="#ordering" class="link-special" data-smooth-scroll>Megrendelés</a></li>
+						<li><a href="#pricing" class="link-special" data-smooth-scroll>Árak</a></li>
+					</ul>
+				</div>
+				<div class="grid-col grid-col--1of4 grid-col--small--1of2 grid-col--xsmall--full">
+					<h2>Kapcsolat</h2>
+					<ul class="list-meta list-special">
+						<li><span class="list-meta-key">Név</span> BR2 Stúdió Kft.</li>
+						<li><span class="list-meta-key">Adószám</span> 10763272-2-19</li>
+						<li><span class="list-meta-key">E-mail cím</span> <a href="mailto:hello@decapad.com" class="link-special">hello@decapad.com</a></li>
+						<li><span class="list-meta-key">Telefonszám</span> <a href="tel:+36205102343" class="link-special">+36 20 510 2343</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr />
+			<div class="footer-copyright grid grid--gutter grid--middle grid--between">
+				<div class="grid-col grid-col--small--full small-text-center">
+					<p class="footer-copyright-info">&copy; 2019 Decapad. Minden jog fenntartva.</p>
+				</div>
+				<div class="grid-col grid-col--small--full">
+					<ul class="grid grid--center grid--gutter grid--gutter--half">
+						<li class="grid-col"><a href="https://twitter.com/decapad" target="_blank" rel="noreferrer" class="button button--iconbutton button--small button--iconbutton--circle" aria-label="Twitter"><svg class="icon"><use xlink:href="#logo-twitter"></use></svg></a></li>
+						<li class="grid-col"><a href="mailto:hello@decapad.com" class="button button--iconbutton button--small button--iconbutton--circle" aria-label="E-mail"><svg class="icon"><use xlink:href="#icon-mail"></use></svg></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Assistive alert -->
+	<div class="assistive-alert" data-assistive-alert></div>
+
+	<!-- Scripts -->
+	<script src="assets/js/scripts.js"></script>
+
+</div>
+</body>
+</html>

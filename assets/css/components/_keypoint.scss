@@ -1,0 +1,57 @@
+/* Keypoint component prototype */
+.keypoint {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2em;
+	height: 2em;
+	margin-bottom: $block-margin;
+	border-radius: $border-radius;
+	background-color: $border-bg-color;
+	color: $fg-color !important;
+	font-size: ($normal-font-size * 2);
+	font-weight: $bold-font-weight;
+	cursor: default;
+}
+
+/* Keypoint component extensions */
+.keypoint {
+
+	// Small keypoint
+	&.keypoint--small {
+		font-size: ($normal-font-size * 1.5);
+	}
+
+	// Large keypoint
+	&.keypoint--large {
+		font-size: ($normal-font-size * 2.5);
+	}
+
+	// Circle keypoint
+	&.keypoint--circle {
+		border-radius: 50%;
+	}
+
+	&.keypoint--rotated {
+		border-radius: 25%;
+		transform: rotate(45deg);
+
+		> * {
+			transform: rotate(-45deg);
+		}
+	}
+
+	// Scheme specific keypoints
+	@each $scheme in map-keys($schemes) {
+		@if (map-val($schemes, $scheme, generate-keypoint)) {
+			&.keypoint--#{$scheme} {
+				background-color: map-val($schemes, $scheme, bg-color);
+				color: map-val($schemes, $scheme, fg-bold-color) !important;
+			}
+		}
+	}
+}

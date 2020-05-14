@@ -1,0 +1,36 @@
+/* Footer singleton prototype */
+.footer {
+	padding: $section-padding 0 ($section-padding - $element-margin) 0;
+	background-color: darken($border-bg-color, 3);
+
+	h2 {
+		font-size: $heading-4-font-size;
+	}
+
+	hr {
+		margin-bottom: $element-margin;
+	}
+
+	ul.list-special li, hr {
+		border-color: darken($border-color, 3);
+	}
+
+	.button {
+		background-color: darken($border-bg-color, 10);
+
+		body.no-touch &:hover, &:active {
+			background-color: darken($border-bg-color, 15);
+		}
+	}
+
+	.footer-copyright {
+		font-size: $small-font-size;
+	}
+
+	@include breakpoint('small') {
+
+		.footer-copyright-info {
+			margin-bottom: $grid-gutter;
+		}
+	}
+}

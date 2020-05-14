@@ -1,0 +1,38 @@
+// Link typography variables
+$scheme-includes-link-typography: true;
+
+/* Link typography */
+a {
+	color: $link-color;
+	text-decoration: underline;
+
+	body.no-touch &:hover {
+		text-decoration: none;
+	}
+}
+
+/* Link typography extensions */
+a.link-special {
+	color: inherit;
+	text-decoration: none;
+
+	body.no-touch &:hover {
+		color: $link-color;
+	}
+}
+
+// Scheme specific link typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-link-typography) {
+		&.scheme--#{$scheme} {
+
+			a {
+				color: map-val($schemes, $scheme, link-color);
+			}
+
+			a.link-special:hover {
+				color: map-val($schemes, $scheme, link-color);
+			}
+		}
+	}
+}

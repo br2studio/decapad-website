@@ -1,0 +1,50 @@
+/* Section component */
+.section {
+	padding: $section-padding 0 ($section-padding - $element-margin) 0;
+}
+
+/* Section component extensions */
+.section {
+
+	// Large section
+	&.section--large {
+		padding: ($section-padding * 1.5) 0 ($section-padding * 1.5 - $element-margin) 0;
+	}
+
+	// Small section
+	&.section--small {
+		padding: ($section-padding * 0.625) 0 (($section-padding * 0.625) - $element-margin) 0;
+	}
+
+	// Section with half of viewport's height
+	&.section--half-vh {
+		min-height: 50vh;
+	}
+
+	// Section with viewport's height
+	&.section--full-vh {
+		min-height: 100vh;
+	}
+
+	// Special section
+	&.section--special {
+		padding-top: 0;
+	}
+	
+	// Scheme specific sections
+	@each $scheme in map-keys($schemes) {
+		@if (map-val($schemes, $scheme, generate-section)) {
+			&.section--#{$scheme} {
+				background-color: map-val($schemes, $scheme, bg-color);
+
+				&.section--#{$scheme}--dark {
+					background-color: darken(map-val($schemes, $scheme, bg-color), 5);
+				}
+
+				&.section--#{$scheme}--light {
+					background-color: lighten(map-val($schemes, $scheme, bg-color), 5);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+/* Pricing singleton prototype */
+.pricing {
+
+	.pricing-list {
+
+		.pricing-list-item {
+			text-align: center;
+
+			p {
+				font-size: $large-font-size;
+				font-weight: $heading-font-weight;
+
+				> span {
+					display: block;
+					font-size: $small-font-size;
+					font-weight: $normal-font-weight;
+				}
+			}
+		}
+
+		.pricing-list-hint {
+			font-size: $small-font-size;
+			text-align: center;
+			background-color: $border-bg-color;
+			padding: $box-padding;
+			font-weight: $medium-font-weight;
+		}
+	}
+}

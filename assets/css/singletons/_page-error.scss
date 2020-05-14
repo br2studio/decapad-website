@@ -1,0 +1,14 @@
+/* Page error singleton prototype */
+.page-error {
+	text-align: center;
+	min-height: 100vh;
+	padding: $section-padding 0 ($section-padding - $element-margin) 0;
+	background-color: darken($border-bg-color, 3);
+	display: flex;
+	align-items: center;
+
+	.image {
+		max-width: 4rem;
+		margin: 0 auto $block-margin auto;
+	}
+}

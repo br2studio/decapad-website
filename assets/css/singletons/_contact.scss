@@ -1,0 +1,37 @@
+/* Contact singleton prototype */
+.contact {
+	background-color: darken(map-val($schemes, primary, bg-color), 0);
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA4MDAgODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtODAwIDBoLTgwMGM0MjUuMDEgMCA1MTAuOTIgMTU3Ljg1IDgwMCAzMC4wOTYgOWUtNSAtMTkuNjk2LTEuN2UtNCAtMTAuNDAxIDAtMzAuMDk2eiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuMzkyMTYiIHN0cm9rZS13aWR0aD0iMS44NTYzIi8+CiA8cGF0aCBkPSJtODAwIDBoLTgwMGM0NTkuNjQgMCA1MTkuMyAxNDQuMTEgODAwIDIwLjA2MyA5ZS01IC0xOS42OTYtMS43ZS00IC0wLjM2NzIzIDAtMjAuMDYzeiIgZmlsbD0iI2ZlZmVmZSIgc3Ryb2tlLXdpZHRoPSIxLjg1NjMiLz4KPC9zdmc+Cg==");
+	background-repeat: no-repeat;
+	background-size: 130% auto;
+	background-position: -90% -1px;
+
+	.contact-content {
+		position: relative;
+	}
+
+	.contact-content-text {
+		padding-right: 20rem + ($grid-gutter * 2);
+	}
+
+	.contact-content-image {
+		position: absolute;
+		width: 20rem;
+		bottom: $section-padding * -1;
+		right: 0;
+		margin-bottom: 0;
+	}
+
+	@include breakpoint('medium') {
+		background-size: 120% auto;
+		background-position: -90% -1px;
+
+		.contact-content-text {
+			padding-right: 0;
+		}
+
+		.contact-content-image {
+			display: none;
+		}
+	}
+}

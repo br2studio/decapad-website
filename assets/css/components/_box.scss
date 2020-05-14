@@ -1,0 +1,75 @@
+// Box component variables
+$box-generate-scheme: true;
+
+/* Box component prototype */
+.box {
+	display: block;
+	margin-bottom: $element-margin;
+	padding: $box-padding;
+	border: 1px solid $border-color;
+	border-radius: $border-radius;
+	background-color: $bg-color;
+
+	> :last-child,
+	> :last-child > :last-child,
+	> :last-child > :last-child > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Box component extensions */
+.box {
+
+	// Borderless box
+	&.box--special {
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		background-color: transparent;
+	}
+
+	// Scheme specific boxes
+	@each $scheme in map-keys($schemes) {
+		@if (map-val($schemes, $scheme, generate-box)) {
+			&.box--#{$scheme} {
+				border: 0;
+				background-color: map-val($schemes, $scheme, bg-color);
+
+				&.box--#{$scheme}--dark {
+					background-color: darken(map-val($schemes, $scheme, bg-color), 5);
+				}
+
+				&.box--#{$scheme}--light {
+					background-color: lighten(map-val($schemes, $scheme, bg-color), 5);
+				}
+			}
+		}
+	}
+}
+
+/* Box component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $box-generate-scheme) {
+		&.scheme--#{$scheme} {
+
+			.box {
+				border-color: map-val($schemes, $scheme, border-color);
+				background-color: transparent;
+
+				@if (map-val($schemes, $scheme, generate-box)) {
+					&.box--#{$scheme} {
+						background-color: map-val($schemes, $scheme, bg-color);
+					}
+
+					&.box--#{$scheme}--dark {
+						background-color: darken(map-val($schemes, $scheme, bg-color), 5);
+					}
+
+					&.box--#{$scheme}--light {
+						background-color: lighten(map-val($schemes, $scheme, bg-color), 5);
+					}
+				}
+			}
+		}
+	}
+}

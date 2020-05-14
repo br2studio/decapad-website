@@ -1,0 +1,136 @@
+// Settings
+$disabled-javascript:			true;
+
+// Size variables
+$grid-columns:						6;
+$grid-gutter:						1.5rem;
+$container-width:					60rem;
+$section-padding:					4rem;
+$element-margin:					2.5rem;
+$block-margin:						0.5rem;
+$box-padding:						1rem;
+$border-radius:					4px;
+$element-height:					2.5em;
+$transition:						200ms ease-out;
+$animation:							300ms ease-out;
+
+// Font size variables
+$normal-font-size:				1rem;
+$small-font-size:					0.8rem;
+$large-font-size:					1.2rem;
+$subnav-font-size:				0.9rem;
+
+// Heading font size variables
+$heading-1-font-size:			2rem;
+$heading-2-font-size:			1.8rem;
+$heading-3-font-size:			1.6rem;
+$heading-4-font-size:			1.4rem;
+$heading-5-font-size:			1.2rem;
+$heading-6-font-size:			1rem;
+
+// Subheading font size variables
+$subheading-1-font-size:		1.3rem;
+$subheading-2-font-size:		1.2rem;
+$subheading-3-font-size:		1.1rem;
+$subheading-4-font-size:		1rem;
+$subheading-5-font-size:		0.9rem;
+$subheading-6-font-size:		0.8rem;
+
+// Font weight variables
+$normal-font-weight:				400;
+$medium-font-weight:				500;
+$bold-font-weight:				700;
+
+// Font families
+$base-font-family:				'Roboto', Arial, Helvetica, sans-serif;
+$heading-font-family:			'Roboto', Arial, Helvetica, sans-serif;
+$nav-font-family:					'Roboto', Arial, Helvetica, sans-serif;
+$fixed-font-family:				'Roboto Mono', monospace;
+
+// Font weights
+$base-font-weight:				$normal-font-weight;
+$heading-font-weight:			$medium-font-weight;
+$nav-font-weight:					$normal-font-weight;
+$fixed-font-weight:				$normal-font-weight;
+
+// Font line heights
+$base-line-height:				1.5;
+$heading-line-height:			1.5;
+$nav-line-height:					1.5;
+$fixed-line-height:				1.5;
+
+// Font letter spacing
+$base-letter-spacing:			0;
+$heading-letter-spacing:		0;
+$nav-letter-spacing:				0;
+$fixed-letter-spacing:			0;
+
+// Initial colors
+$body-bg-color:					#ffffff;
+$bg-color:							#ffffff;
+$fg-color:							#4c4c4c;
+$fg-light-color:					#747474;
+$fg-bold-color:					#383838;
+$link-color:						#ef5063;
+$focus-color:						#fba026;
+$border-color:						#dddddd;
+$border-bg-color:					#f7f7f7;
+
+// Schemes
+$schemes: (
+	primary: (
+		bg-color:					#ef5063,
+		fg-color:					#fcdce0,
+		fg-light-color:			#facbd0,
+		fg-bold-color:				#ffffff,
+		link-color:					#ffffff,
+		border-color:				#f26e7e,
+		border-bg-color:			#f0596b,
+		generate-scheme:			true,
+		generate-box:				false,
+		generate-section:			false,
+		generate-button:			true,
+		generate-keypoint:		true
+	),
+	secondary: (
+		bg-color:					#5c5072,
+		fg-color:					#d4cfdb,
+		fg-light-color:			#c5c0ce,
+		fg-bold-color:				#ffffff,
+		link-color:					#ffffff,
+		border-color:				#756a89,
+		border-bg-color:			#645878,
+		generate-scheme:			true,
+		generate-box:				false,
+		generate-section:			false,
+		generate-button:			true,
+		generate-keypoint:		true
+	)
+);
+
+// States
+$states: (
+	success: (
+		bg-color:					#1a8c8a,
+		fg-color:					#e9f6f5,
+		fg-bold-color:				#ffffff
+	),
+	error: (
+		bg-color:					#e43725,
+		fg-color:					#fdedec,
+		fg-bold-color:				#ffffff
+	),
+	warning: (
+		bg-color:					#e08e0b,
+		fg-color:					#fef5e7,
+		fg-bold-color:				#ffffff
+	)
+);
+
+// Breakpoints
+$breakpoints: (
+	large:							'(max-width: 82em)',
+	medium:							'(max-width: 62em)',
+	small:							'(max-width: 47em)',
+	xsmall:							'(max-width: 32em)',
+);

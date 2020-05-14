@@ -1,0 +1,21 @@
+/* Container component prototype */
+.container {
+	width: 90%;
+	max-width: $container-width;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Container component extensions */
+.container {
+
+	// Narrow container
+	&.container--narrow {
+		max-width: ($container-width / 1.5) - $grid-gutter;
+	}
+
+	// Half-size container
+	&.container--half {
+		max-width: ($container-width / 2 );
+	}
+}

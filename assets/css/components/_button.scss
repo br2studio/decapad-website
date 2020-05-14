@@ -1,0 +1,272 @@
+// Butto component variables
+$button-generate-scheme: true;
+$button-transition: $transition;
+$button-dropdown-transition: $transition;
+
+/* Button component prototype */
+.button {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: $element-height;
+	padding: 0 0.8em;
+	border: none;
+	border-radius: $border-radius;
+	background-color: darken($border-bg-color, 5);
+	color: $fg-color !important;
+	font-size: $normal-font-size;
+	font-weight: $bold-font-weight;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color $button-transition, opacity $button-transition;
+
+	body.no-touch &:hover, &:active {
+		background-color: darken($border-bg-color, 10);
+	}
+
+	&[type="submit"]:disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+
+	&.keyboard-focus:focus {
+		outline: 0;
+		box-shadow: inset 0 0 0 3px $focus-color;
+	}
+}
+
+/* Button component extensions */
+.button {
+
+	// Small button
+	&.button--small {
+		font-size: $small-font-size;
+	}
+
+	// Large button
+	&.button--large {
+		font-size: $large-font-size;
+	}
+
+	// Button's width fitted to the parent element
+	&.button--fit {
+		width: 100%;
+	}
+
+	// Square button with an SVG icon
+	&.button--iconbutton {
+		width: $element-height;
+		padding: 0;
+
+		&.button--iconbutton--circle {
+			border-radius: 50%;
+		}
+	}
+
+	// Button with a small badge on the top right corner
+	&.button--badge {
+		position: relative;
+		overflow: visible;
+
+		&[data-badge]:before {
+			display: inline-block;
+			position: absolute;
+			top: -0.5em;
+			right: -0.5em;
+			padding: 0.125em 0.5em;
+			border-radius: $border-radius;
+			background-color: $link-color;
+			color: $bg-color;
+			font-size: $small-font-size;
+			line-height: 1;
+			white-space: nowrap;
+			content: attr(data-badge);
+			cursor: default;
+		}
+	}
+
+	// Scheme specific buttons
+	@each $scheme in map-keys($schemes) {
+		@if (map-val($schemes, $scheme, generate-button)) {
+			&.button--#{$scheme} {
+				background-color: map-val($schemes, $scheme, bg-color);
+				color: map-val($schemes, $scheme, fg-bold-color) !important;
+
+				body.no-touch &:hover, &:active {
+					background-color: lighten(map-val($schemes, $scheme, bg-color), 5);
+				}
+			}
+		}
+	}
+}
+
+/* Button group component prototype */
+.button-group-list {
+
+	.button {
+		position: relative;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.button-group-list-item {
+		padding-right: 2px;
+	}
+
+	.button-group-list-item:first-of-type .button {
+		border-radius: $border-radius 0 0 $border-radius;
+	}
+
+	.button-group-list-item:last-of-type  {
+		padding-right: 0;
+
+		.button {
+			border-radius: 0 $border-radius $border-radius 0;
+		}
+	}
+
+	.button-group-list-item:only-of-type  {
+		.button {
+			border-radius: $border-radius;
+		}
+	}
+}
+
+/* Button dropdown component prototype */
+.button-dropdown {
+	position: relative;
+
+	> ul {
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		max-height: 0;
+		margin: 0;
+		padding-left: 0;
+		border-radius: $border-radius;
+		background-color: $bg-color;
+		box-shadow: 0px 0px 2px rgba(0,0,0,0.15);
+		list-style: none;
+		transform: rotateX(90deg);
+		transform-origin: 0 0;
+		transition: max-height $button-dropdown-transition, visibility $button-dropdown-transition, transform $button-dropdown-transition, opacity $button-dropdown-transition;
+
+		> li {
+			padding-left: 0;
+			border-top: 1px solid rgba(0,0,0,0.1);
+
+			> a {
+				display: block;
+				padding: ($box-padding * 0.75) $box-padding;
+				color: inherit;
+				text-decoration: none;
+				font-size: $subnav-font-size;
+				white-space: nowrap;
+
+				body.no-touch &:hover {
+					color: $link-color;
+				}
+
+				&.keyboard-focus:focus {
+					outline: 0;
+					box-shadow: inset 0 0 0 3px $focus-color;
+				}
+			}
+
+			&:first-of-type {
+				border-top: none;
+			}
+		}
+
+		&:before {
+			position: absolute;
+			top: ($box-padding * -0.5);
+			left: ($box-padding * 0.5);
+			width: 0;
+			height: 0;
+			border-width: 0 ($box-padding * 0.5) ($box-padding * 0.5);
+			border-style: solid;
+			border-color: $bg-color transparent;
+			content: '';
+		}
+
+		&.is-opened {
+			visibility: visible;
+			transform: rotateX(0deg);
+		}
+	}
+}
+
+/* Button dropdown component extensions */
+.button-dropdown {
+
+	// Right aligned button dropdown
+	&.button-dropdown--right {
+
+		> ul {
+			right: 0;
+			left: auto;
+
+			&:before {
+				right: ($box-padding * 0.5);
+				left: auto;
+			}
+		}
+	}
+}
+
+/* Button link component prototype */
+.button-link {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: inherit;
+	text-align: left;
+	display: inline-block;
+
+	body.no-touch &:hover {
+		color: $link-color;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		color: mix($fg-color, $bg-color, 50);
+
+		body.no-touch &:hover {
+			color: mix($fg-color, $bg-color, 50);
+		}
+	}
+}
+
+/* Button link component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $button-generate-scheme) {
+		&.scheme--#{$scheme} {
+
+			.button-link {
+
+				body.no-touch &:hover {
+					color: map-val($schemes, $scheme, link-color);
+				}
+
+				&:disabled {
+					color: mix(map-val($schemes, $scheme, fg-color), map-val($schemes, $scheme, bg-color), 50);
+
+					body.no-touch &:hover {
+						color: mix(map-val($schemes, $scheme, fg-color), map-val($schemes, $scheme, bg-color), 50);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+// Lazy image variables
+$lazy-image-transition: 200ms linear;
+
+/* Lazy image component prototype */
+.lazy-image {
+	overflow: hidden;
+
+	img {
+		filter: blur(10px);
+		transition: filter $lazy-image-transition;
+
+		&.is-already-loaded {
+			transition: none !important;
+		}
+		
+		&.is-loaded {
+			filter: none;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+/* Introduction singleton prototype */
+.introduction {
+
+	.introduction-item {
+		text-align: center;
+
+		.keypoint {
+			margin-bottom: $grid-gutter;
+
+			body.no-touch &.is-animating {
+				animation-duration: 600ms;
+				animation-name: introduction-item-animation;
+			}
+		}
+	}
+}
+
+/* Introduction singleton animations */
+@keyframes introduction-item-animation {
+	0% {
+		transform: rotate(45deg) scale(1);
+	}
+
+	50% {
+		transform: rotate(45deg) scale(1.1);
+	}
+
+	100% {
+		transform: rotate(45deg) scale(1);
+	}
+}

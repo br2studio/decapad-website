@@ -1,0 +1,7 @@
+/* Noscript singleton prototype */
+.noscript {
+	padding: $box-padding;
+	background-color: map-val($states, warning, bg-color);
+	color: map-val($states, warning, fg-color);
+	text-align: center;
+}

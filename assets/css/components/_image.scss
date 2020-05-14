@@ -1,0 +1,77 @@
+// Image component variables
+$image-cover-transition: $transition;
+
+/* Image component prototype */
+.image {
+	display: block;
+	margin-bottom: $element-margin;
+
+	img, canvas {
+		display: block;
+		max-width: 100%;
+		border-radius: $border-radius;
+	}
+}
+
+/* Image component extensions */
+.image {
+
+	// Fit image's width to the parent element
+	&.image--fit {
+
+		img, canvas {
+			width: 100%;
+		}
+	}
+
+	// Image center alignament
+	&.image--center {
+
+		img, canvas {
+			margin: 0 auto;
+		}
+	}
+
+	// Left floated image
+	&.image--left {
+		max-width: 40%;
+		margin: 0.25rem ($grid-gutter / 2) 0 0;
+		float: left;
+	}
+
+	// Right floated image
+	&.image--right {
+		max-width: 40%;
+		margin: 0.25rem 0 0 ($grid-gutter / 2);
+		float: right;
+	}
+
+	// Image cover effect
+	&.image--cover {
+		position: relative;
+
+		&:before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($bg-color, 0);
+			content: '';
+			transition: background-color $image-cover-transition;
+		}
+
+		body.no-touch &:hover:before {
+			background-color: rgba($bg-color,0.3);
+		}
+	}
+
+	// Circle image
+	&.image--circle {
+
+		img, canvas {
+			border-radius: 50%;
+		}
+	}
+}

@@ -1,0 +1,132 @@
+// List typography variables
+$scheme-includes-list-typography: true;
+
+/* List typography */
+ul, ol {
+	margin: 0 0 $element-margin 0;
+	padding-left: 1.25rem;
+
+	li {
+		padding-left: 0.25rem;
+	}
+
+	ul, ol {
+		margin-bottom: 0;
+	}
+}
+
+dl {
+	margin: 0 0 $element-margin 0;
+
+	dt {
+		display: block;
+		margin: 0 0 $block-margin 0;
+		color: $fg-bold-color;
+		font-family: $heading-font-family;
+		font-weight: $heading-font-weight;
+		letter-spacing: $heading-letter-spacing;
+		line-height: $heading-line-height;
+	}
+
+	dd {
+		margin-left: 0;
+	}
+}
+
+/* List typography extensions */
+ul.list-special {
+	padding-left: 0;
+	list-style: none;
+
+	li {
+		display: block;
+		padding: 0.5rem 0;
+		border-top: 1px solid $border-color;
+
+		&:first-child {
+			padding-top: 0;
+			border-top: 0;
+		}
+	}
+}
+
+ul.list-meta {
+
+	.list-meta-key {
+		color: $fg-bold-color;
+		font-size: $small-font-size;
+		font-weight: $bold-font-weight;
+		display: block;
+	}
+}
+
+ul.list-breadcrumb {
+	font-size: $small-font-size;
+
+	> li {
+
+		> a {
+			margin-right: 0.5rem;
+			color: inherit;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			body.no-touch &:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&:after {
+			margin-right: 0.5rem;
+			content: '>';
+		}
+
+		&:last-of-type:after {
+			margin-right: 0;
+			content: '';
+		}
+	}
+}
+
+ul.list-pagination {
+
+	> li {
+
+		> .button {
+			border-radius: 0;
+
+			&.list-pagination-separator {
+				cursor: default;
+				pointer-events:none;
+			}
+		}
+
+		&:first-of-type > .button {
+			border-radius: $border-radius 0 0 $border-radius;
+		}
+
+		&:last-of-type > .button {
+			border-radius: 0 $border-radius $border-radius 0;
+		}
+	}
+}
+
+// Scheme specific list typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-list-typography) {
+		&.scheme--#{$scheme} {
+
+			dl dt {
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+
+			ul.list-special li {
+				border-color: map-val($schemes, $scheme, border-color);
+			}
+
+			ul.list-meta .key {
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+		}
+	}
+}

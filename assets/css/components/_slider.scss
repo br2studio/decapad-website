@@ -1,0 +1,139 @@
+// Slider component variables
+$slider-transition: 300ms ease-out;
+$slider-rewind-transition: 800ms ease-in-out;
+$slider-dot-transition: $transition;
+$slider-generate-scheme: true;
+
+/* Slider component prototype */
+.slider {
+	position: relative;
+	margin-bottom: $element-margin;
+
+	.slider-viewport {
+		overflow: hidden;
+	}
+
+	.slider-list {
+		position: relative;
+		flex-wrap: nowrap;
+	}
+
+	.slider-list-item {
+		flex-shrink: 0;
+	}
+
+	&.is-sliding {
+
+		.slider-list {
+			transition: transform $slider-transition;
+		}
+	}
+
+	&:not(.is-sliding) {
+
+		.slider-list-item:not(.is-visible) {
+			visibility: hidden;
+			transition: visibility $slider-transition;
+		}
+	}
+
+	&.has-no-next-item {
+
+		.slider-control-list .slider-control-list-next {
+			pointer-events: none;
+		}
+	}
+
+	&.has-no-prev-item {
+
+		.slider-control-list .slider-control-list-prev {
+			pointer-events: none;
+		}
+	}
+
+	&.is-rewinding {
+
+		.slider-list {
+			transition: transform $slider-rewind-transition;
+		}
+
+		.slider-control-list .slider-control-list-prev,  .slider-control-list .slider-control-list-next {
+			pointer-events: none;
+		}
+	}
+
+	&.is-dragging {
+
+		.slider-list {
+			transition: transform 0ms;
+		}
+
+		.slider-list-item:not(.is-visible) {
+			visibility: visible;
+		}
+	}
+
+	&.has-mouse-drag {
+
+		.slider-viewport {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+
+			img {
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+/* Slider component extensions */
+.slider {
+
+	// Slider dots
+	.slider-dot-list .slider-dot-list-item  {
+		width: 1rem;
+		height: 1rem;
+		padding: 0;
+		border: none;
+		border-radius: 50%;
+		background-color: $border-color;
+		cursor: pointer;
+		transition: background-color $slider-dot-transition;
+
+		body.no-touch &:hover, &:active {
+			background-color: darken($border-color, 5);
+		}
+
+		&.keyboard-focus:focus {
+			outline: 0;
+			box-shadow: inset 0 0 0 3px $focus-color;
+		}
+
+		&.is-active {
+			background-color: $link-color;
+		}
+	}
+}
+
+/* Slider component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $slider-generate-scheme) {
+		&.scheme--#{$scheme} {
+
+			.slider .slider-dot-list .slider-dot-list-item {
+				background-color: map-val($schemes, $scheme, border-color);
+
+				body.no-touch &:hover, &:active {
+					background-color: lighten(map-val($schemes, $scheme, border-color), 5);
+				}
+
+				&.is-active {
+					background-color: map-val($schemes, $scheme, link-color);
+				}
+			}
+		}
+	}
+}
