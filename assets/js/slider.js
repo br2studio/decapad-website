@@ -1,5 +1,5 @@
 /**
- * Slider - v1.0.2
+ * Slider - v1.0.1
  * Copyright 2020 Abel Brencsan
  * Released under the MIT License
  */
@@ -459,7 +459,6 @@ Slider.prototype = function () {
 						if (slider.activeItem && slider.activeEventType == 'pointer') {
 							if (!slider.activeItem.touchDirection) slider.setTouchDirection.call(slider.activeItem, event.pageX, event.pageY);
 							if (slider.activeItem.touchDirection === 'horizontal') {
-								event.preventDefault();
 								slider.dragMove.call(slider.activeItem, event.pageX);
 							}
 						}
