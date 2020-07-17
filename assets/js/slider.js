@@ -1,6 +1,6 @@
 /**
- * Slider - v1.0.0
- * Copyright 2018 Abel Brencsan
+ * Slider - v1.0.2
+ * Copyright 2020 Abel Brencsan
  * Released under the MIT License
  */
 
@@ -33,9 +33,10 @@ var Slider = function (options) {
 		rewind: true,
 		touchDrag: true,
 		mouseDrag: true,
+		initCallback: null,
 		nextCallback: null,
 		prevCallback: null,
-		slideCallback: null,
+		slideToCallback: null,
 		recalcCallback: null,
 		dragStartCallback: null,
 		dragMoveCallback: null,
@@ -104,7 +105,7 @@ Slider.prototype = function () {
 		activeEventType: null,
 
 		/**
-		 * Initialize slider (public)
+		 * Initialize slider. It creates events, adds classes relevant to slider. (public)
 		 */
 		init: function() {
 			if (this.isInitialized) return;
@@ -153,10 +154,11 @@ Slider.prototype = function () {
 			}
 			slider.update.call(this);
 			this.isInitialized = true;
+			if (this.initCallback) this.initCallback.call(this);
 		},
 
 		/**
-		 * Increment index by one (or set index to zero on rewind if it is enabled), and emit sliding (public)
+		 * Increment active index by one, update slider. (public)
 		 */
 		next: function() {
 			if (this.activeIndex >= this.itemsCount - this.visibleItemsCount)  {
@@ -172,7 +174,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Decrement index by one (or set index to the last available index on rewind if it is enabled), and emit sliding (public)
+		 * Decrement active index by one, update slider. (public)
 		 */
 		prev: function() {
 			if (this.activeIndex <= 0)  {
@@ -188,18 +190,18 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Set given index and emit sliding (public)
+		 * Set active index to given number, and update slider. (public)
 		 * @param index integer
 		 */
 		slideTo: function(index) {
 			if (index > this.itemsCount - this.visibleItemsCount) return;
 			this.activeIndex = index;
 			slider.slide.call(this);
-			if (this.slideCallback) this.slideCallback.call(this);
+			if (this.slideToCallback) this.slideToCallback.call(this);
 		},
 
 		/**
-		 * Slide to the active index (private)
+		 * Set sliding classes, and update slider. (private)
 		 */
 		slide: function() {
 			this.element.classList.add(this.isSlidingClass);
@@ -208,7 +210,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Update slider variables, set new attributes and classes according to the active index (public)
+		 * Update active and visible items based on active index. (public)
 		 */
 		update: function() {
 			var focusableElements, isVisible;
@@ -253,11 +255,11 @@ Slider.prototype = function () {
 			this.element.classList.remove(this.hasNoPrevItemClass);
 			if (this.activeIndex == this.itemsCount - this.visibleItemsCount && !this.rewind) this.element.classList.add(this.hasNoNextItemClass);
 			if (this.activeIndex == 0 && !this.rewind) this.element.classList.add(this.hasNoPrevItemClass);
-			this.list.style.transform = 'translate3d(' + this.currentPercent + '%,0,0)';
+			this.list.style.transform = 'translateX(' + this.currentPercent + '%)';
 		},
 
 		/**
-		 * Reset index when visible items are wider than list width, and update slider (public)
+		 * Reset active index when visible items are wider than slider list's width, update slider. (public)
 		 */
 		recalc: function() {
 			if (this.visibleItemsWidth < this.list.offsetWidth) this.activeIndex = 0;
@@ -266,7 +268,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Remove classes from element when sliding is finished (private)
+		 * Remove sliding classes after sliding is finished. (private)
 		 */
 		slideEnd: function() {
 			this.element.classList.remove(this.isSlidingClass);
@@ -275,7 +277,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Set given start (and first move) drag position, detect long touch when dragging has started (private)
+		 * Set given start (and first move) drag position, detect long touch when dragging has started. (private)
 		 * @param dragPosition integer
 		 */
 		dragStart: function(dragPosition) {
@@ -294,7 +296,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Set given move drag position, calculates movement in percent, and translate slider to the calculated position (private)
+		 * Set given move drag position, calculates movement in percent, and translate slider to the calculated position. (private)
 		 * @param dragPosition integer
 		 */
 		dragMove: function(dragPosition) {
@@ -306,12 +308,12 @@ Slider.prototype = function () {
 			if (this.dragMovePosition > this.dragStartPosition && this.dragMovePercent > 0) {
 				this.dragMovePercent = Math.pow(this.dragMovePercent, 0.5);
 			}
-			this.list.style.transform = 'translate3d(' + this.dragMovePercent + '%,0,0)';
+			this.list.style.transform = 'translateX(' + this.dragMovePercent + '%)';
 			if (this.dragMoveCallback) this.dragMoveCallback.call(this);
 		},
 
 		/**
-		 * Calculates new active index from start and last move position, and emit sliding (private)
+		 * Calculates new active index from start and last move position, and emit sliding. (private)
 		 */
 		dragEnd: function() {
 			if (this.dragMovePosition != this.dragStartPosition) {
@@ -341,7 +343,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Set given touch start position (private)
+		 * Set given touch start position. (private)
 		 * @param touchX integer
 		 * @param touchY integer
 		 */
@@ -351,7 +353,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Calculate touch direction (vertical or horizontal) from touch start and given positions (private)
+		 * Calculate touch direction (vertical or horizontal) from touch start and given positions. (private)
 		 * @param touchX integer
 		 * @param touchY integer
 		 */
@@ -365,26 +367,29 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Check element is draggable (private)
+		 * Check element is draggable. (private)
 		 * @param element object
 		 */
 		isElementDraggable: function(element) {
-			var focusableElements = element.parentNode.querySelectorAll(focusSelector);
-			for (var i = 0; i < focusableElements.length; i++) {
-				if (focusableElements[i] == element) {
+			var matches;
+			var parentElement = element;
+			while (parentElement != this.viewport) {
+				matches = parentElement.matches ? parentElement.matches(focusSelector) : parentElement.msMatchesSelector(focusSelector);
+				if (matches) {
 					return false;
 				}
+				parentElement = parentElement.parentNode;
 			}
 			return true;
 		},
 
 		/**
-		 * Handle events (private)
-		 * On next, previous or custom trigger click: Emit sliding to next, previous item, or to the item given by custom trigger
-		 * On list transition end: Handle sliding finish
-		 * On viewport touch start: Handle dragging start
-		 * On viewport touch move: Handle dragging move
-		 * On viewport touch end: Handle dragging end
+		 * Handle events. (private)
+		 * On next, previous or custom trigger click: Emit sliding to next, previous item, or to the item given by custom trigger.
+		 * On list transition end: Handle sliding finish.
+		 * On viewport touch start: Handle dragging start.
+		 * On viewport touch move: Handle dragging move.
+		 * On viewport touch end: Handle dragging end.
 		 * @param event object
 		 */
 		handleEvents: function(event) {
@@ -413,7 +418,7 @@ Slider.prototype = function () {
 					}
 					break;
 				case 'touchstart':
-					if (!slider.activeEventType && slider.isElementDraggable(event.target)) {
+					if (!slider.activeEventType && slider.isElementDraggable.call(this, event.target)) {
 						slider.activeEventType = 'touch';
 						slider.activeItem = this;
 						slider.setTouchStartPosition.call(this, event.touches[0].pageX, event.touches[0].pageY);
@@ -440,7 +445,7 @@ Slider.prototype = function () {
 					break;
 				case 'pointerdown':
 					if (event.pointerType == 'touch' || event.pointerType == 'pen') {
-						if (!slider.activeEventType && slider.isElementDraggable(event.target)) {
+						if (!slider.activeEventType && slider.isElementDraggable.call(this, event.target)) {
 							slider.activeEventType = 'pointer';
 							slider.activeItem = this;
 							slider.setTouchStartPosition.call(this, event.pageX, event.pageY);
@@ -454,6 +459,7 @@ Slider.prototype = function () {
 						if (slider.activeItem && slider.activeEventType == 'pointer') {
 							if (!slider.activeItem.touchDirection) slider.setTouchDirection.call(slider.activeItem, event.pageX, event.pageY);
 							if (slider.activeItem.touchDirection === 'horizontal') {
+								event.preventDefault();
 								slider.dragMove.call(slider.activeItem, event.pageX);
 							}
 						}
@@ -470,7 +476,7 @@ Slider.prototype = function () {
 					}
 					break;
 				case 'mousedown':
-					if (!slider.activeEventType && slider.isElementDraggable(event.target)) {
+					if (!slider.activeEventType && slider.isElementDraggable.call(this, event.target)) {
 						slider.activeEventType = 'mouse';
 						slider.activeItem = this;
 						slider.setTouchStartPosition.call(this, event.pageX, event.pageY);
@@ -498,7 +504,7 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Destroy slider (public)
+		 * Destroy slider. It removes events and classes relevant to slider. (public)
 		 */
 		destroy: function() {
 			if (!this.isInitialized) return;
@@ -570,14 +576,14 @@ Slider.prototype = function () {
 		},
 
 		/**
-		 * Get value of "isInitialized" (public)
+		 * Get value of "isTriggerInitialized" to be able to check slider is initialized or not. (public)
 		 */
 		getIsInitialized: function() {
 			return this.isInitialized;
 		},
 
 		/**
-		 * Get value of "activeIndex" (public)
+		 * Get value of "activeIndex" to be able to get current active index. (public)
 		 */
 		getActiveIndex: function() {
 			return this.activeIndex;
